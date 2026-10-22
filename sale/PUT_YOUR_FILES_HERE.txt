@@ -1,0 +1,5 @@
+Place your product photos in this folder with these exact names:
+  image_1.jpg  image_2.jpg  image_3.jpg  image_4.jpg  image_5.jpg
+Optional royalty-free music (you must have the right to use it):
+  music.mp3
+Delete this note if you like. It is not used by the app.
