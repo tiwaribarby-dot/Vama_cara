@@ -1,0 +1,17 @@
+--- /mnt/user-data/outputs/style.css	2026-10-18 12:34:35.709583000 +0000
++++ style.css	2026-10-22 03:14:45.264979626 +0000
+@@ -80,3 +80,14 @@
+ }
+ @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+ .export-canvas{position:fixed;left:0;top:0;width:2px;height:2px;opacity:.01;pointer-events:none}
++
++.framing{background:var(--smoke);border:1px solid var(--line);padding:16px;display:grid;gap:12px}
++.framing .hint{flex:none}
++.framing-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
++.framing-list li{display:grid;gap:6px;font-size:13px;color:var(--muted);align-content:start}
++.fr-img{position:relative;border:1px solid var(--line);background:var(--ink);cursor:crosshair;touch-action:manipulation;overflow:hidden}
++.fr-img img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
++.fr-img .dot{position:absolute;width:22px;height:22px;margin:-11px 0 0 -11px;border:2px solid var(--gold-light);border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.6);pointer-events:none}
++.framing-list label{display:grid;gap:2px}
++.framing-list input[type=range]{width:100%;accent-color:var(--gold);min-height:32px}
++.help a{color:var(--gold-light)}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050403">
+  <title>VAMA CARA Video Ad Creator v2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1 class="wordmark">VAMA CARA</h1>
+    <p class="tagline">Video ad creator for the Export Edition white shirt (version 2 draft)</p>
+  </header>
+
+  <main>
+    <div id="fileWarning" class="banner warn" hidden>
+      <strong>Open this page through a local server, not file://.</strong>
+      Browsers block canvas recording of images loaded from file://. See the setup steps below.
+    </div>
+
+    <section class="stage" aria-label="Ad preview">
+      <div class="frame">
+        <canvas id="preview" width="960" height="540" aria-label="Video ad preview"></canvas>
+        <div id="stageMsg" class="stage-msg" role="status">Loading product images…</div>
+      </div>
+      <div class="progress">
+        <div class="bar"><span id="barFill"></span></div>
+        <span id="timeText" class="time">0:00 / 0:24</span>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Controls">
+      <button id="playBtn" class="btn" disabled>Play preview</button>
+      <button id="pauseBtn" class="btn" disabled>Pause</button>
+      <button id="restartBtn" class="btn" disabled>Restart</button>
+      <button id="stopBtn" class="btn" disabled>Stop</button>
+      <button id="exportBtn" class="btn primary" disabled>Export video</button>
+    </section>
+
+    <section class="settings" aria-label="Export settings">
+      <label>Resolution
+        <select id="resSelect">
+          <option value="auto" selected>Auto (recommended)</option>
+          <option value="1080">1920×1080 Full HD</option>
+          <option value="720">1280×720 HD</option>
+        </select>
+      </label>
+      <label>Format
+        <select id="fmtSelect">
+          <option value="auto" selected>MP4 if supported, otherwise WebM</option>
+          <option value="webm">WebM only</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="soundToggle" checked> Play music in preview</label>
+      <p id="autoHint" class="hint"></p>
+    </section>
+
+    <section class="framing" aria-label="Camera framing">
+      <h2>Camera framing</h2>
+      <p class="hint">Each shot starts on the whole photo and slowly pushes in toward the point you tap. Tap the collar, the buttons or the overall fit, adjust the zoom, and the preview jumps to that shot. Saved on this device.</p>
+      <ul id="framingList" class="framing-list"></ul>
+      <button id="resetFraming" class="btn">Reset framing</button>
+    </section>
+
+    <section id="notice" class="banner" hidden aria-live="assertive">
+      <h2 id="noticeTitle"></h2>
+      <p id="noticeBody"></p>
+      <ul id="noticeList"></ul>
+      <button id="retryBtn" class="btn" hidden></button>
+    </section>
+
+    <section id="output" class="output" hidden aria-live="polite">
+      <h2 id="outputTitle">Your video is ready</h2>
+      <video id="resultVideo" controls playsinline preload="metadata"></video>
+      <dl id="stats" class="stats"></dl>
+      <div class="out-actions">
+        <a id="downloadLink" class="btn primary big" href="#" download>Download video</a>
+        <a id="openLink" class="btn" href="#" target="_blank" rel="noopener">Open video</a>
+        <button id="shareBtn" class="btn" hidden>Share or save</button>
+        <button id="againBtn" class="btn">Export again</button>
+      </div>
+      <p id="outputNote" class="hint"></p>
+    </section>
+
+    <section class="assets" aria-label="Project files">
+      <h2>Project files</h2>
+      <ul id="assetGrid" class="asset-grid"></ul>
+      <p id="musicStatus" class="hint"></p>
+      <p id="formatSupport" class="hint"></p>
+    </section>
+
+    <section class="help">
+      <h2>Running on Android</h2>
+      <p>Serve this folder over http (for example with Termux: <code>python -m http.server 8080</code>), then open <code>http://localhost:8080</code> in Chrome. Full steps and troubleshooting are in README.md.</p>
+      <p>The first version is kept for reference: <a href="index_v1_original.html">open original version (v1)</a>.</p>
+      <p>Some mobile browsers open a generated video in a player instead of saving it. If that happens, use the player's menu or long-press the video to save it, or use Share or save.</p>
+    </section>
+  </main>
+
+  <noscript><p class="banner warn">This tool needs JavaScript.</p></noscript>
+  <script src="app.js"></script>
+</body>
+</html>

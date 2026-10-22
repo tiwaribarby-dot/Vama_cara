@@ -1,0 +1,46 @@
+--- index.html (v1)	2026-10-19 14:27:52.828556647 +0000
++++ index.html	2026-10-22 03:14:45.264275774 +0000
+@@ -4,13 +4,13 @@
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+   <meta name="theme-color" content="#050403">
+-  <title>VAMA CARA Video Ad Creator</title>
++  <title>VAMA CARA Video Ad Creator v2</title>
+   <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+   <header class="top">
+     <h1 class="wordmark">VAMA CARA</h1>
+-    <p class="tagline">Video ad creator for the Export Edition white shirt</p>
++    <p class="tagline">Video ad creator for the Export Edition white shirt (version 2 draft)</p>
+   </header>
+ 
+   <main>
+@@ -56,6 +56,13 @@
+       <p id="autoHint" class="hint"></p>
+     </section>
+ 
++    <section class="framing" aria-label="Camera framing">
++      <h2>Camera framing</h2>
++      <p class="hint">Each shot starts on the whole photo and slowly pushes in toward the point you tap. Tap the collar, the buttons or the overall fit, adjust the zoom, and the preview jumps to that shot. Saved on this device.</p>
++      <ul id="framingList" class="framing-list"></ul>
++      <button id="resetFraming" class="btn">Reset framing</button>
++    </section>
++
+     <section id="notice" class="banner" hidden aria-live="assertive">
+       <h2 id="noticeTitle"></h2>
+       <p id="noticeBody"></p>
+@@ -86,11 +93,12 @@
+     <section class="help">
+       <h2>Running on Android</h2>
+       <p>Serve this folder over http (for example with Termux: <code>python -m http.server 8080</code>), then open <code>http://localhost:8080</code> in Chrome. Full steps and troubleshooting are in README.md.</p>
++      <p>The first version is kept for reference: <a href="index.html (v1)">open original version (v1)</a>.</p>
+       <p>Some mobile browsers open a generated video in a player instead of saving it. If that happens, use the player's menu or long-press the video to save it, or use Share or save.</p>
+     </section>
+   </main>
+ 
+   <noscript><p class="banner warn">This tool needs JavaScript.</p></noscript>
+-  <script src="app_v1_original.js"></script>
++  <script src="app.js"></script>
+ </body>
+ </html>
